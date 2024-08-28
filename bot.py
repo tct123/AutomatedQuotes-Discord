@@ -21,8 +21,8 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith("$hello"):
-        await message.channel.send(getQuotes(APININJA_TOKEN))
+    if message.content.startswith("$quote"):
+        await message.channel.send(getQuotes(api_key=APININJA_TOKEN))
 
 
 client.run(token=TOKEN_DISCORD)
