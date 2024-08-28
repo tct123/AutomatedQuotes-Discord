@@ -26,7 +26,7 @@ async def on_message(message):
     if message.content.startswith("$quote"):
         category = len(mylist)
         category = mylist[random.randint(a=0, b=category)]
-        await message.channel.send(getQuotes(api_key=APININJA_TOKEN))
+        await message.channel.send(getQuotes(api_key=APININJA_TOKEN, category=category))
 
 
 client.run(token=TOKEN_DISCORD)
