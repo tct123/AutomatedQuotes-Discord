@@ -1,6 +1,7 @@
 import discord
 import os
 import dotenv as dv
+import asyncio
 
 dv.load_dotenv()
 TOKEN_DISCORD = os.getenv("TOKEN_DISCORD")
@@ -23,4 +24,4 @@ async def on_message(message):
         await message.channel.send("Hello!")
 
 
-client.run(TOKEN_DISCORD)
+client.run(token=TOKEN_DISCORD)
