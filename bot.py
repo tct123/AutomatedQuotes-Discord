@@ -2,6 +2,8 @@ import discord
 import os
 import dotenv as dv
 from quotesgeneratorapi_wrapper.quotesgenerator import getQuotes
+from mylist import mylist
+import random
 
 dv.load_dotenv()
 TOKEN_DISCORD = os.getenv("TOKEN_DISCORD")
@@ -22,6 +24,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith("$quote"):
+        category = len(mylist)
+        category = mylist[random.randint(a=0, b=category)]
         await message.channel.send(getQuotes(api_key=APININJA_TOKEN))
 
 
