@@ -23,4 +23,4 @@ async def on_message(message):
         await message.channel.send("Hello!")
 
 
-client.run("your token here")
+client.run(TOKEN_DISCORD)
